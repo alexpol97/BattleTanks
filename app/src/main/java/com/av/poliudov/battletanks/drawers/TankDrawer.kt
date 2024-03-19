@@ -8,6 +8,7 @@ import com.av.poliudov.battletanks.enums.Direction
 import com.av.poliudov.battletanks.models.Coordinate
 import com.av.poliudov.battletanks.models.Element
 import com.av.poliudov.battletanks.utils.checkViewCanMoveThroughtBorder
+import com.av.poliudov.battletanks.utils.getElementByCoordinates
 
 class TankDrawer(val container: FrameLayout) {
     var currentDirection = Direction.UP
@@ -77,9 +78,4 @@ class TankDrawer(val container: FrameLayout) {
         )
         return coordinateList
     }
-
-    private fun getElementByCoordinates(
-        coordinate: Coordinate, elementsOnContainer: List<Element>) =
-        elementsOnContainer.firstOrNull { it.coordinate == coordinate }
-
 }
