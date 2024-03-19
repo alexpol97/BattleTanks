@@ -3,12 +3,8 @@ package com.av.poliudov.battletanks.drawers
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
-import androidx.core.view.marginLeft
-import androidx.core.view.marginTop
 import com.av.poliudov.battletanks.CELL_SIZE
 import com.av.poliudov.battletanks.R
-import com.av.poliudov.battletanks.binding
-import com.av.poliudov.battletanks.enums.Direction
 import com.av.poliudov.battletanks.enums.Material
 import com.av.poliudov.battletanks.models.Coordinate
 import com.av.poliudov.battletanks.models.Element

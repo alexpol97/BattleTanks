@@ -7,6 +7,7 @@ import com.av.poliudov.battletanks.binding
 import com.av.poliudov.battletanks.enums.Direction
 import com.av.poliudov.battletanks.models.Coordinate
 import com.av.poliudov.battletanks.models.Element
+import com.av.poliudov.battletanks.utils.checkViewCanMoveThroughtBorder
 
 class TankDrawer(val container: FrameLayout) {
     var currentDirection = Direction.UP
@@ -38,9 +39,8 @@ class TankDrawer(val container: FrameLayout) {
         }
 
         val nextCoordinate = Coordinate(layoutParams.topMargin, layoutParams.leftMargin)
-        if (checkTankCanMoveThroughtBorder(
-                nextCoordinate,
-                myTank,
+        if (myTank.checkViewCanMoveThroughtBorder(
+                nextCoordinate
             ) && checkTankCanMoveThroughtMaterial(nextCoordinate, elementsOnContainer)
         ) {
             binding.container.removeView(myTank)
@@ -62,17 +62,6 @@ class TankDrawer(val container: FrameLayout) {
             }
         }
         return true
-    }
-
-    private fun checkTankCanMoveThroughtBorder(coordinate: Coordinate, myTank: View): Boolean {
-        if (coordinate.top >= 0 &&
-            coordinate.top + myTank.height <= binding.container.height &&
-            coordinate.left >= 0 &&
-            coordinate.left + myTank.width <= binding.container.width
-        ) {
-            return true
-        }
-        return false
     }
 
     private fun getTankCoordinates(topLeftCoordinate: Coordinate): List<Coordinate> {

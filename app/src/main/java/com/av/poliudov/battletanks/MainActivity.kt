@@ -13,18 +13,13 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
-import android.widget.FrameLayout
-import androidx.core.view.marginLeft
-import androidx.core.view.marginTop
 import com.av.poliudov.battletanks.enums.Direction.*
 import com.av.poliudov.battletanks.databinding.ActivityMainBinding
 import com.av.poliudov.battletanks.drawers.BulletDrawer
 import com.av.poliudov.battletanks.drawers.ElementsDrawer
 import com.av.poliudov.battletanks.drawers.GridDrawer
 import com.av.poliudov.battletanks.drawers.TankDrawer
-import com.av.poliudov.battletanks.enums.Direction
 import com.av.poliudov.battletanks.enums.Material
-import com.av.poliudov.battletanks.models.Coordinate
 
 const val CELL_SIZE = 50
 
@@ -118,7 +113,7 @@ class MainActivity : AppCompatActivity() {
                 RIGHT,
                 elementsDrawer.elementsOnContainer
             )
-            KEYCODE_SPACE -> bulletDrawer.drawBullet(
+            KEYCODE_SPACE -> bulletDrawer.makeBulletMove(
                 binding.myTank,
                 tankDrawer.currentDirection
             )
