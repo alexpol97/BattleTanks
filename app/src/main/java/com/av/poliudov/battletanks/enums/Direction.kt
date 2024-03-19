@@ -1,4 +1,4 @@
-package com.av.poliudov.battletanks
+package com.av.poliudov.battletanks.enums
 
 enum class Direction {
     UP,
